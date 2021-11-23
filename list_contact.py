@@ -22,4 +22,4 @@ while True:
             no_contact = int(input('Silahkan pilih No yang akan di hapus?'))
             delete_contact(no_contact, list_contact)
         elif(menu == 4):
-            print('4')
+            find_contact(list_contact)

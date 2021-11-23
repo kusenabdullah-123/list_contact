@@ -40,5 +40,16 @@ def delete_contact(no, contacts):
             print('Contact Delete Successfuly')
 
 
-def find_contact():
-    print('find')
+def find_contact(contacts):
+    dicari = input('Mau Cari Siapa?')
+    for contact in contacts:
+        nama = contact['nama']
+        if(nama.find(dicari) != -1):
+            print('--------------------')
+            for key, value in contact.items():
+                print(f'{key}: {value} ')
+            print('====================')
+        else:
+            print('========Contact========')
+            print('404 Contact Not Found')
+            print('====================')
