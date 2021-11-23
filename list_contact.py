@@ -12,7 +12,7 @@ while True:
     for i in range(0, len(list_menu)):
         print(f'{i+1}. {list_menu[i].capitalize()}')
     menu = int(input('Silahkan Pilih Menu :'))
-    if(menu < 0 or menu > len(list_menu)):
+    if(menu <= 0 or menu > len(list_menu)):
         print('Silahkan Pilih Menu Yang Tersedia ya..')
     else:
         if(menu == 1):
@@ -20,8 +20,8 @@ while True:
         elif(menu == 2):
             list_contact.append(add_contact())
         elif(menu == 3):
-            no_contact = int(input('Silahkan pilih No yang akan di hapus?'))
-            delete_contact(no_contact, list_contact)
+
+            delete_contact(list_contact)
         elif(menu == 4):
             find_contact(list_contact)
         elif (menu == 5):

@@ -24,20 +24,26 @@ def add_contact():
     }
 
 
-def delete_contact(no, contacts):
+def delete_contact(contacts):
+
     if(len(contacts) <= 0):
         print('========Contact========')
         print('404 Contact Not Found')
         print('====================')
     else:
-        print('--------------------')
-        for key, value in contacts[no - 1].items():
-            print(f'{key}: {value} ')
-        print('====================')
-        yakin_delete = input('Yakin Mau Menghapus No ini..?')
-        if(yakin_delete.lower() == 'y'):
-            del contacts[no-1]
-            print('Contact Delete Successfuly')
+        no = int(
+            input(f'Silahkan pilih No yang akan di hapus? [1-{len(contacts)}]'))
+        if(no <= 0 or no > len(contacts)):
+            print('pilih menu dengan benar ya sayang')
+        else:
+            print('--------------------')
+            for key, value in contacts[no - 1].items():
+                print(f'{key}: {value} ')
+            print('====================')
+            yakin_delete = input('Yakin Mau Menghapus No ini..?')
+            if(yakin_delete.lower() == 'y'):
+                del contacts[no-1]
+                print('Contact Delete Successfuly')
 
 
 def find_contact(contacts):
