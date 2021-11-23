@@ -19,6 +19,7 @@ while True:
         elif(menu == 2):
             list_contact.append(add_contact())
         elif(menu == 3):
-            no_contact = input('Silahkan pilih')
+            no_contact = int(input('Silahkan pilih No yang akan di hapus?'))
+            delete_contact(no_contact, list_contact)
         elif(menu == 4):
             print('4')

@@ -5,11 +5,12 @@ def show_contact(contacts):
         print('====================')
     else:
         print('========Contact========')
-        for contact in contacts:
+        for no in range(0, len(contacts)):
             print('--------------------')
-            for key, value in contact.items():
+            print(f'{no+1}.')
+            for key, value in contacts[no].items():
                 print(f'{key}: {value} ')
-        print('====================')
+            print('====================')
 
 
 def add_contact():
@@ -18,13 +19,25 @@ def add_contact():
     email = input('sekalian email nya ya')
     return {
         'nama': nama,
-        'no': no,
+        'No Telp': no,
         'email': email
     }
 
 
-def delete_contact():
-    print('hello')
+def delete_contact(no, contacts):
+    if(len(contacts) <= 0):
+        print('========Contact========')
+        print('404 Contact Not Found')
+        print('====================')
+    else:
+        print('--------------------')
+        for key, value in contacts[no - 1].items():
+            print(f'{key}: {value} ')
+        print('====================')
+        yakin_delete = input('Yakin Mau Menghapus No ini..?')
+        if(yakin_delete.lower() == 'y'):
+            del contacts[no-1]
+            print('Contact Delete Successfuly')
 
 
 def find_contact():
