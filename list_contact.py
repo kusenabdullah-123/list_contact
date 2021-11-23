@@ -3,7 +3,8 @@ from module_contact import add_contact
 from module_contact import delete_contact
 from module_contact import find_contact
 
-list_menu = ['list contact', 'add contact', 'delete contact', 'find contact']
+list_menu = ['list contact', 'add contact',
+             'delete contact', 'find contact', 'shutdown server']
 list_contact = []
 
 while True:
@@ -23,3 +24,6 @@ while True:
             delete_contact(no_contact, list_contact)
         elif(menu == 4):
             find_contact(list_contact)
+        elif (menu == 5):
+            print('Comeback Soon')
+            break

@@ -14,9 +14,9 @@ def show_contact(contacts):
 
 
 def add_contact():
-    nama = input('Namanya Siapa?')
-    no = input('No nya dong?')
-    email = input('sekalian email nya ya')
+    nama = input('Namanya Siapa? :')
+    no = input('No nya dong? :')
+    email = input('sekalian email nya ya :')
     return {
         'nama': nama,
         'No Telp': no,
@@ -42,14 +42,16 @@ def delete_contact(no, contacts):
 
 def find_contact(contacts):
     dicari = input('Mau Cari Siapa?')
+    ada = False
     for contact in contacts:
         nama = contact['nama']
         if(nama.find(dicari) != -1):
+            ada = True
             print('--------------------')
             for key, value in contact.items():
                 print(f'{key}: {value} ')
             print('====================')
-        else:
-            print('========Contact========')
-            print('404 Contact Not Found')
-            print('====================')
+    if(ada == False):
+        print('========Contact========')
+        print('404 Contact Not Found')
+        print('====================')
